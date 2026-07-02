@@ -1,0 +1,20 @@
+name: MySQL MCP
+version: 0.0.1
+schema: v1
+
+mcpServers:
+  - name: MySQL local tienda_mcp
+    type: stdio
+    command: npx
+    args:
+      - "-y"
+      - "@benborla29/mcp-server-mysql"
+    env:
+      MYSQL_HOST: "127.0.0.1"
+      MYSQL_PORT: "3306"
+      MYSQL_USER: "mcp_user"
+      MYSQL_PASS: "mcp_password_123"
+      MYSQL_DB: "tienda_mcp"
+      ALLOW_INSERT_OPERATION: "false"
+      ALLOW_UPDATE_OPERATION: "false"
+      ALLOW_DELETE_OPERATION: "false"

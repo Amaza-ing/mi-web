@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo Simple</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Existing code remains the same -->
+    <main class="card">
+      <header>
+        <h2>Bienvenido a mi página web</h2>
+        <div class="logo" aria-label="Logo de la página"></div>
+        <button id="toggle-theme" aria-label="Cambiar tema">
+          Cambiar tema
+        </button>
+      </header>
+
+      <h1>Hola, mundo</h1>
+      <p>Esta es una página web sencilla creada con HTML, CSS y JavaScript.</p>
+
+      <div class="clock" aria-label="Reloj analógico">
+        <div class="clock-face">
+          <div class="hand hour" id="hour"></div>
+          <div class="hand minute" id="minute"></div>
+          <div class="hand second" id="second"></div>
+          <div class="center-dot"></div>
+        </div>
+      </div>
+
+      <button id="saludar">Haz clic</button>
+      <p id="mensaje" class="mensaje">Esperando acción...</p>
+    </main>
+
+    <iframe
+      src="https://app.relevanceai.com/agents/d7b62b/7c860f52-9dff-4b28-8038-668889ef0765/c8c15947-c6dc-4d3a-8fc1-dd7d1c2f0b7a/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false"
+      width="100%"
+      height="600px"
+      frameborder="0"
+      allow="microphone"
+    ></iframe>
+
+    <!-- New footer element -->
+    <footer>
+      <p>Tu Nombre</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
