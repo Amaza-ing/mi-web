@@ -13,6 +13,6 @@ jobs:
 
       - name: Verify required files exist
         run: |
-          test -f patata.html
+          test -f index.html
           test -f styles.css
           test -f script.js

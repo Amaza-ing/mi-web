@@ -1,0 +1,33 @@
+name: Docker image CI
+
+on:
+  push:
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t mi-web:ci .
+
+      - name: Run container
+        run: |
+          docker run -d --name mi-web-test -p 8080:80 mi-web:ci
+          for i in {1..15}; do
+            if curl -fsS http://127.0.0.1:8080/index.html > /tmp/index.html; then
+              break
+            fi
+            sleep 2
+          done
+
+      - name: Verify the site is served inside the container
+        run: |
+          curl -fsS http://127.0.0.1:8080/index.html | grep -qi "<html"
+
+      - name: Cleanup container
+        if: always()
+        run: docker rm -f mi-web-test || true
